@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/agustinrabini/Gocker/cmd/server/handler"
 	"github.com/agustinrabini/Gocker/internal/database"
 	"github.com/agustinrabini/Gocker/internal/product"
 	"github.com/gin-gonic/gin"
