@@ -35,9 +35,9 @@ func (r *repository) GetAll(ctx context.Context) (domain.Products, error) {
 
 	db := r.db
 
-	result, err := r.db.Query("select * from product")
+	result, err := db.Query("select * from product")
 	if err != nil {
-		fmt.Print("Error en la consulta", err.Error())
+		fmt.Print("Error en la query", err.Error())
 	}
 
 	for result.Next() {
@@ -45,7 +45,7 @@ func (r *repository) GetAll(ctx context.Context) (domain.Products, error) {
 		err := result.Scan(&product.Id_product, &product.Name, &product.Brand, &product.Description, &product.Image, &product.Price, &product.Stock)
 		if err != nil {
 
-			fmt.Print("Error en la consulta", err.Error())
+			fmt.Print("Error en las rows", err.Error())
 			return nil, err
 		}
 

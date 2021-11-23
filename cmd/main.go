@@ -19,7 +19,7 @@ func main() {
 	api := r.Group("/api")
 	{
 		api.GET("/", func(c *gin.Context) { c.String(http.StatusOK, "arranco") })
-		api.GET("/", productHandler.GetAll())
+		api.GET("/getAll", productHandler.GetAll())
 	}
 
 	r.Run(":8080")
